@@ -1,0 +1,103 @@
+<div class="header__container">
+  <div class="container-fluid" style="max-width: 1440px;">
+    <div class="switch" (click)="switchDarkTheme()" nzTooltipTitle="Switch Dark / Light Theme" nzTooltipPlacement="left"
+      nz-tooltip>
+      <i class="fe fe-moon on"></i>
+      <i class="fe fe-sun off"></i>
+    </div>
+    <div class="color" [ngClass]="{'reset': reset}" nzTooltipTitle="Set Primary Color" nzTooltipPlacement="left"
+      nz-tooltip>
+      <button (click)="resetColor()">
+        <i class="fe fe-x-circle"></i>
+      </button>
+      <input type="color" id="colorPicker" (change)="selectColor($event.target.value)" [(ngModel)]="primaryColor" />
+      <i class="fe fe-package"></i>
+    </div>
+    <header class="pt-3 pb-4">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="topbar">
+            <a class="logo mr-md-5 mr-auto" href="widgets-general.html">
+              <div class="logo__pic">
+                <i></i>
+                <i></i>
+              </div>
+              <div>
+                <span class="logo__main">Clean UI</span>
+                <span class="logo__descr">Admin Template</span>
+              </div>
+              <div class="logo__kit">KIT</div>
+              <div class="logo__pro">PRO</div>
+            </a>
+            <span class="mr-3">Switch to:</span>
+            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://cleanuitemplate.com/kit/react/">
+              React
+            </a>
+            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://cleanuitemplate.com/kit/vue/">
+              Vue
+            </a>
+            <a class="d-none d-md-block mr-3 kit__utils__link"
+              href="https://www.cleanuitemplate.com/kit/html/versions/main/widgets-general.html">
+              Html
+            </a>
+            <a class="mr-auto d-none d-md-block kit__utils__link" href="https://docs.cleanuitemplate.com/kit-pro/"
+              target="_blank">
+              Documentation →
+            </a>
+            <p class="mb-0 mr-3 d-xl-block d-none">
+              Status
+              <span class="ml-1 badge bg-primary text-white font-size-12 text-uppercase">ACTIVE</span>
+            </p>
+            <div>
+              <kit-topbar-user-menu></kit-topbar-user-menu>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="mb-4 mr-4 float-xl-left">
+            <a href="https://themeforest.net/item/clean-ui-kit-pro-widgetdriven-admin-dashboard-template/24783640"
+              rel="noopener noreferrer" target="_blank" class="btn btn-success button">
+              <i class="fe fe-shopping-cart align-middle mr-2"></i>
+              Buy Pro 19$
+              <span>17+ Apps & Premium Support</span>
+            </a>
+          </div>
+          <p class="pt-xl-2">
+            Create beautiful apps faster with Clean UI KIT’s collection of visual, structural,
+            platform, and interactive widgets & utilities.
+            <br />
+            Customized Bootstrap & third-party plugins framework with modular architecture.
+          </p>
+        </div>
+        <div class="col-xl-12">
+          <ul class="list-unstyled tabs">
+            <ng-container *ngFor="let item of menuData">
+              <li>
+                <a [ngClass]="{
+                tabs__active: item.url === activeSubmenu.url
+              }" [routerLink]="item.url">
+                  {{ item.title }}
+                  <span class="badge bg-light ml-1">{{item.count}}</span>
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+          <div class="buttons">
+            <ul class="list-unstyled">
+              <ng-container *ngFor="let item of activeSubmenu.children">
+                <li>
+                  <a class="btn mr-2 mb-2" [ngClass]="{
+                  'btn-primary': item.url===activeItem.url,
+                  'btn-light' : item.url !==activeItem.url
+                }" [routerLink]="item.url">
+                    {{ item.title }}
+                  </a>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>

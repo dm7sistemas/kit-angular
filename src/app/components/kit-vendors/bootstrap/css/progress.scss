@@ -1,0 +1,11 @@
+@import 'src/app/components/kit-core/mixins.scss';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/* PROGRESS */
+
+// dark theme
+body.kit__dark {
+  .progress {
+    background: $dark-gray-4;
+  }
+}
