@@ -5,6 +5,8 @@ import { Component } from '@angular/core'
   templateUrl: './checkbox.component.html',
 })
 export class KitAntdCheckboxExampleComponent {
+  checked: Boolean = true
+
   checkOptionsOne = [
     { label: 'Apple', value: 'Apple', checked: true },
     { label: 'Pear', value: 'Pear' },

@@ -4,4 +4,6 @@ import { Component } from '@angular/core'
   selector: 'kit-antd-pagination-example',
   templateUrl: './pagination.component.html',
 })
-export class KitAntdPaginationExampleComponent {}
+export class KitAntdPaginationExampleComponent {
+  current = 1
+}

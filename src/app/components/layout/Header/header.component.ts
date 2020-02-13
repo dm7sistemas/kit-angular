@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationStart, Event } from '@angular/router'
+import { Router, NavigationEnd, Event } from '@angular/router'
 import * as _ from 'lodash'
 import menuData from './config'
 import AntDesignDarkTheme from 'src/app/components/kit-vendors/antd/themes/themeDark'
@@ -17,12 +17,12 @@ export class HeaderComponent implements OnInit {
   primaryColor: any = '#4b7cf3'
   reset: Boolean = true
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   ngOnInit() {
     // set active menu items
     this.setActiveItems(this.router.url)
     this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) {
+      if (event instanceof NavigationEnd) {
         this.setActiveItems(event.url ? event.url : null)
       }
     })
@@ -31,7 +31,9 @@ export class HeaderComponent implements OnInit {
     const mode = window.localStorage.getItem('kit.theme')
     if (mode === 'dark') {
       document.querySelector('body').classList.add('kit__dark')
-      ;(<any>window).less.modifyVars(AntDesignDarkTheme)
+        ; (<any>window).less.modifyVars(AntDesignDarkTheme)
+    } else {
+      ; (<any>window).less.modifyVars(AntDesignLightTheme)
     }
 
     // init primary color
@@ -45,11 +47,11 @@ export class HeaderComponent implements OnInit {
     if (document.querySelector('body').classList.contains('kit__dark')) {
       document.querySelector('body').classList.remove('kit__dark')
       window.localStorage.setItem('kit.theme', 'light')
-      ;(<any>window).less.modifyVars(AntDesignLightTheme)
+        ; (<any>window).less.modifyVars(AntDesignLightTheme)
     } else {
       document.querySelector('body').classList.add('kit__dark')
       window.localStorage.setItem('kit.theme', 'dark')
-      ;(<any>window).less.modifyVars(AntDesignDarkTheme)
+        ; (<any>window).less.modifyVars(AntDesignDarkTheme)
     }
   }
 
