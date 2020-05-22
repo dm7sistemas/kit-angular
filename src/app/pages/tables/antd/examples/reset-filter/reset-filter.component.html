@@ -3,7 +3,7 @@
   <button nz-button (click)="resetFilters()">Clear filters</button>
   <button nz-button (click)="resetSortAndFilters()">Clear filters and sorters</button>
 </div>
-<nz-table #filterTable [nzData]="listOfDisplayData" class="kit__utils__scrollTable mb-4" [nzScroll]="{x: '100%'}">
+<nz-table #filterTable [nzData]="listOfDisplayData" class="kit__utils__table mb-4">
   <thead>
     <tr>
       <th nzShowSort nzShowFilter [(nzSort)]="mapOfSort.name" (nzSortChange)="sort('name', $event)"

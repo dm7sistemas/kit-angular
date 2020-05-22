@@ -6,8 +6,7 @@
   <span *ngIf="numberOfChecked">Selected {{ numberOfChecked }} items</span>
 </div>
 <nz-table #rowSelectionTable nzShowPagination nzShowSizeChanger [nzData]="listOfAllData"
-  (nzCurrentPageDataChange)="currentPageDataChange($event)" class="kit__utils__scrollTable mb-4"
-  [nzScroll]="{x: '100%'}">
+  (nzCurrentPageDataChange)="currentPageDataChange($event)" class="kit__utils__table mb-4">
   <thead>
     <tr>
       <th nzShowCheckbox [(nzChecked)]="isAllDisplayDataChecked" [nzIndeterminate]="isIndeterminate"

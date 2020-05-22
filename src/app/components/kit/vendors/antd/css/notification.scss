@@ -1,0 +1,6 @@
+// Import mixins
+@import 'src/app/components/mixins.scss';
+
+.ant-notification {
+  max-width: calc(100vw - 48px);
+}

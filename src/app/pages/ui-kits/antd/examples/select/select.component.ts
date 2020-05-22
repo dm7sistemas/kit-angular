@@ -1,10 +1,10 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'kit-antd-select-example',
   templateUrl: './select.component.html',
 })
-export class KitAntdSelectExampleComponent {
+export class KitAntdSelectExampleComponent implements OnInit {
   listOfOption: Array<{ label: string; value: string }> = []
   size = 'default'
   selectedValue = 'lucy'

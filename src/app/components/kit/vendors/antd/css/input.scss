@@ -1,0 +1,20 @@
+// Import mixins
+@import 'src/app/components/mixins.scss';
+
+.ant-input {
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $primary;
+  }
+}
+
+.ant-input-affix-wrapper {
+  &:hover,
+  &:focus,
+  &:active {
+    .ant-input:not(.ant-input-disabled) {
+      border-color: $primary;
+    }
+  }
+}

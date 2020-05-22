@@ -1,0 +1,12 @@
+// Import mixins
+@import 'src/app/components/mixins.scss';
+
+.ant-dropdown {
+  color: $gray-6;
+}
+
+.ant-dropdown-menu-item-group-list {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}

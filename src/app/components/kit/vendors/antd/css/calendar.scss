@@ -1,0 +1,13 @@
+// Import mixins
+@import 'src/app/components/mixins.scss';
+
+.ant-fullcalendar-content {
+  ul {
+    padding-left: 0;
+  }
+}
+
+.ant-fullcalendar-fullscreen .ant-fullcalendar-month-panel-selected-cell .ant-fullcalendar-month,
+.ant-fullcalendar-fullscreen .ant-fullcalendar-selected-day .ant-fullcalendar-date {
+  background: $gray-1;
+}

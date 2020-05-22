@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-  ) {}
+  ) { }
 
   ngOnInit() {
     // set page title from router data variable

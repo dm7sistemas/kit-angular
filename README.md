@@ -1,16 +1,16 @@
-### Quick Start ###
+### Clean UI KIT Angular Preview ###
+https://kit-angular.cleanuitemplate.com
 
-* Install node.js: https://nodejs.org​
-* Install yarn package manager: https://yarnpkg.com/​
+### Documentation ###
+Please read documentation here https://docs.cleanuitemplate.com
+
+### Quick Start ###
+* Install latest node.js: https://nodejs.org​
+* Install latest yarn package manager: https://yarnpkg.com/​
 * Install angular cli: `npm install -g @angular/cli`
 * Install node modules by running terminal command `yarn install`
 * Run the app `yarn start` or `ng serve --open`
-* For build production files use `yarn build` or `ng build` (build to /dist/ folder)
-
-### Documentation ###
-
-Please read documentation here https://docs.cleanuitemplate.com
+* Or build production app `yarn build` or `ng build`
 
 ### Support ###
-
-Use GitLab Issues section for tracking bugs or write to [support@cleanuitemplate.com](mailto:support@cleanuitemplate.com).
+Use GitHub Issues for tracking bugs and creating new feature requests or write to [support@sellpixels.com](mailto:support@sellpixels.com).

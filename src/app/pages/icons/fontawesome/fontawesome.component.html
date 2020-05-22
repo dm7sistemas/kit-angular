@@ -30,7 +30,8 @@
               <strong>{{iconsSet.setName}}</strong>
             </h3>
             <ul class="kit__utils__iconPresent list-unstyled">
-              <li *ngFor="let icon of iconsSet.icons" nz-tooltip nzPlacement="top" [nzTitle]="'fa ' + icon">
+              <li *ngFor="let icon of iconsSet.icons" nz-tooltip nzTooltipPlacement="top"
+                [nzTooltipTitle]="'fa ' + icon">
                 <i [class]="'fa ' + icon"></i>
               </li>
             </ul>

@@ -1,4 +1,4 @@
-<nz-table #editRowTable nzBordered [nzData]="listOfData" class="kit__utils__scrollTable mb-4" [nzScroll]="{x: '100%'}">
+<nz-table #editRowTable nzBordered [nzData]="listOfData" class="kit__utils__table mb-4">
   <thead>
     <tr>
       <th nzWidth="25%">Name</th>
@@ -40,7 +40,7 @@
           </ng-container>
           <ng-template #saveTpl>
             <a (click)="saveEdit(data.id)">Save</a>
-            <a nz-popconfirm nzTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.id)">Cancel</a>
+            <a nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.id)">Cancel</a>
           </ng-template>
         </div>
       </td>

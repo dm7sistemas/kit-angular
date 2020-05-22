@@ -98,7 +98,7 @@
   [nzSimple]="simple" [nzLoading]="loading" [nzPaginationPosition]="position" [nzShowSizeChanger]="sizeChanger"
   [nzFrontPagination]="pagination" [nzShowPagination]="pagination" [nzFooter]="footer ? 'Here is Footer' : null"
   [nzTitle]="title ? 'Here is Title' : null" [nzSize]="size" (nzCurrentPageDataChange)="currentPageDataChange($event)"
-  class="kit__utils__scrollTable mb-4" [nzScroll]="{x: '100%'}">
+  class="kit__utils__table mb-4">
   <thead>
     <tr *ngIf="header">
       <th nzWidth="50px" nzShowExpand *ngIf="expandable"></th>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { WidgetsRouterModule } from './widgets-routing.module'
-import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
+import { WidgetsComponentsModule } from 'src/app/components/kit/widgets/widgets-components.module'
 
 // widgets
 import { ChartsWidgetsComponent } from 'src/app/pages/widgets/charts/charts.component'

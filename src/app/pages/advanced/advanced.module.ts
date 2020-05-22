@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { AdvancedRouterModule } from './advanced-routing.module'
-import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
+import { WidgetsComponentsModule } from 'src/app/components/kit/widgets/widgets-components.module'
 
 // layout
 import { AdvancedTypographyComponent } from 'src/app/pages/advanced/typography/typography.component'

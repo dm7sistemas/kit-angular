@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { distanceInWords } from 'date-fns'
+import { formatDistance } from 'date-fns'
 
 @Component({
   selector: 'kit-antd-comment-example',
@@ -8,7 +8,7 @@ import { distanceInWords } from 'date-fns'
 export class KitAntdCommentExampleComponent {
   likes = 0
   dislikes = 0
-  time = distanceInWords(new Date(), new Date())
+  time = formatDistance(new Date(), new Date())
 
   data = {
     author: 'Han Solo',

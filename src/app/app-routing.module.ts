@@ -19,31 +19,31 @@ const routes: Routes = [
     children: [
       {
         path: 'icons',
-        loadChildren: 'src/app/pages/icons/icons.module#IconsModule',
+        loadChildren: () => import('src/app/pages/icons/icons.module').then(m => m.IconsModule),
       },
       {
         path: 'charts',
-        loadChildren: 'src/app/pages/charts/charts.module#ChartsModule',
+        loadChildren: () => import('src/app/pages/charts/charts.module').then(m => m.ChartsModule),
       },
       {
         path: 'cards',
-        loadChildren: 'src/app/pages/cards/cards.module#CardsModule',
+        loadChildren: () => import('src/app/pages/cards/cards.module').then(m => m.CardsModule),
       },
       {
         path: 'advanced',
-        loadChildren: 'src/app/pages/advanced/advanced.module#AdvancedModule',
+        loadChildren: () => import('src/app/pages/advanced/advanced.module').then(m => m.AdvancedModule),
       },
       {
         path: 'widgets',
-        loadChildren: 'src/app/pages/widgets/widgets.module#WidgetsModule',
+        loadChildren: () => import('src/app/pages/widgets/widgets.module').then(m => m.WidgetsModule),
       },
       {
         path: 'tables',
-        loadChildren: 'src/app/pages/tables/tables.module#TablesModule',
+        loadChildren: () => import('src/app/pages/tables/tables.module').then(m => m.TablesModule),
       },
       {
         path: 'ui-kits',
-        loadChildren: 'src/app/pages/ui-kits/ui-kits.module#UIKitsModule',
+        loadChildren: () => import('src/app/pages/ui-kits/ui-kits.module').then(m => m.UIKitsModule),
       },
     ],
   },

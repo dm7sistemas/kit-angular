@@ -1,0 +1,17 @@
+// Import mixins
+@import 'src/app/components/mixins.scss';
+
+.ant-modal {
+  &-mask {
+    background: rgba($gray-1, 0.9);
+  }
+  &-header {
+    border-color: transparent;
+  }
+  &-footer {
+    border-color: transparent;
+  }
+  &-content {
+    box-shadow: $shadow-3;
+  }
+}

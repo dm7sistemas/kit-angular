@@ -1,12 +1,12 @@
-<nz-table #filterTable [nzData]="listOfDisplayData" class="kit__utils__scrollTable mb-4" [nzScroll]="{x: '100%'}">
-  <thead (nzSortChange)="sort($event)" nzSingleSort>
+<nz-table #filterTable [nzData]="listOfDisplayData" class="kit__utils__table mb-4">
+  <thead (nzSortChange)="sort($event)">
     <tr>
-      <th nzShowSort nzSortKey="name" nzShowFilter [nzFilters]="listOfName"
+      <th nzShowSort nzColumnKey="name" nzShowFilter [nzFilters]="listOfName"
         (nzFilterChange)="filter($event, searchAddress)">
         Name
       </th>
-      <th nzShowSort nzSortKey="age">Age</th>
-      <th nzShowSort nzSortKey="address" nzShowFilter [nzFilterMultiple]="false" [nzFilters]="listOfAddress"
+      <th nzShowSort nzColumnKey="age">Age</th>
+      <th nzShowSort nzColumnKey="address" nzShowFilter [nzFilterMultiple]="false" [nzFilters]="listOfAddress"
         (nzFilterChange)="filter(listOfSearchName, $event)">
         Address
       </th>

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationEnd, Event } from '@angular/router'
+import { Router, NavigationStart, NavigationEnd, Event } from '@angular/router'
 import * as _ from 'lodash'
 import menuData from './config'
-import AntDesignDarkTheme from 'src/app/components/kit-vendors/antd/themes/themeDark'
-import AntDesignLightTheme from 'src/app/components/kit-vendors/antd/themes/themeLight'
 
 @Component({
   selector: 'kit-header',
@@ -23,17 +21,16 @@ export class HeaderComponent implements OnInit {
     this.setActiveItems(this.router.url)
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        this.setActiveItems(event.url ? event.url : null)
+        const replaced = event.url === '/' ? '/widgets/general' : event.url // first load fix
+        const eventUrl = replaced ? replaced : null
+        this.setActiveItems(eventUrl)
       }
     })
 
     // init theme
     const mode = window.localStorage.getItem('kit.theme')
     if (mode === 'dark') {
-      document.querySelector('body').classList.add('kit__dark')
-        ; (<any>window).less.modifyVars(AntDesignDarkTheme)
-    } else {
-      ; (<any>window).less.modifyVars(AntDesignLightTheme)
+      document.querySelector('html').setAttribute('data-kit-theme', 'dark')
     }
 
     // init primary color
@@ -44,14 +41,14 @@ export class HeaderComponent implements OnInit {
   }
 
   switchDarkTheme() {
-    if (document.querySelector('body').classList.contains('kit__dark')) {
-      document.querySelector('body').classList.remove('kit__dark')
-      window.localStorage.setItem('kit.theme', 'light')
-        ; (<any>window).less.modifyVars(AntDesignLightTheme)
-    } else {
-      document.querySelector('body').classList.add('kit__dark')
+    const theme = document.querySelector('html').getAttribute('data-kit-theme')
+    if (theme === 'dark') {
+      document.querySelector('html').setAttribute('data-kit-theme', 'default')
+      window.localStorage.setItem('kit.theme', 'default')
+    }
+    if (theme === 'default') {
+      document.querySelector('html').setAttribute('data-kit-theme', 'dark')
       window.localStorage.setItem('kit.theme', 'dark')
-        ; (<any>window).less.modifyVars(AntDesignDarkTheme)
     }
   }
 

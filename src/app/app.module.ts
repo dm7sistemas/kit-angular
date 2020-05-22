@@ -67,4 +67,4 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   providers: [...LOCALE_PROVIDERS, { provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

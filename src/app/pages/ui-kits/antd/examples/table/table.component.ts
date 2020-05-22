@@ -26,7 +26,7 @@ interface ItemData {
     `,
   ],
 })
-export class KitAntdTableExampleComponent {
+export class KitAntdTableExampleComponent implements OnInit {
   listOfData: ItemData[] = []
   displayData: ItemData[] = []
   bordered = false
